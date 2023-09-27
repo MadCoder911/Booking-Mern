@@ -2,7 +2,7 @@ import { FaBed, FaPlane, FaCar, FaTaxi } from "react-icons/fa";
 import SearchBar from "./SearchBar";
 const Header = () => {
   return (
-    <div className="bg-[#003580]   relative text-white flex justify-center">
+    <div className="bg-[#003580]   relative text-white flex justify-center z-10">
       <div className=" container w-[100%] mt-[20px] mb-[100px] ">
         <div className="flex gap-[40px] mb-[50px]">
           <div className="cursor-pointer flex items-center gap-[10px] hover:scale-[110%] transition-all border-[1px] p-[10px] rounded-[20px]">
