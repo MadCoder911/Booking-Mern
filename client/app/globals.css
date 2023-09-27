@@ -16,6 +16,12 @@ a {
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .container {
+    @apply max-w-[460px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[950px] xl:max-w-[1024px];
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
