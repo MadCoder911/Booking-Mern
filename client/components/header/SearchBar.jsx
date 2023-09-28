@@ -32,7 +32,7 @@ const SearchBar = () => {
     console.log(options);
   };
   return (
-    <div className="py-[20px] container w-[100%] h-[30px] bg-white border-[3px] border-solid border-[#febb02] flex items-center justify-around rounded-md absolute bottom-[-25px]">
+    <div className="py-[20px] container w-[50%] h-[30px] bg-white border-[3px] border-solid border-[#febb02] flex items-center justify-around rounded-md absolute bottom-[-25px]">
       <div className="headerSearchiTEM flex items-center gap-[10px]">
         <FaBed className="text-gray-300 text-[20px]" />
         <input
