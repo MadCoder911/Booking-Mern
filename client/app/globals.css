@@ -21,6 +21,10 @@ a {
     @apply max-w-[460px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[950px] xl:max-w-[1024px];
   }
 }
+body {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;

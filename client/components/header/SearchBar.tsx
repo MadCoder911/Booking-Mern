@@ -38,13 +38,13 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Where are you going?"
-          className="headerSearchInput outline-none text-gray-300"
+          className="headerSearchInput outline-none text-black text-sm"
         />
       </div>
       <div className="relative flex items-center gap-[10px] cursor-pointer">
         <FaCalendar className="text-gray-300" />
         <span
-          className="headersearchText text-gray-300 cursor-pointer"
+          className="headersearchText text-gray-300 cursor-pointer text-sm"
           onClick={() => {
             if (openDate === true) {
               setOpenDate(false);
@@ -83,7 +83,7 @@ const SearchBar = () => {
               setOpenDate(false);
             }
           }}
-          className="headersearchText text-gray-300 cursor-pointer"
+          className="headersearchText text-gray-300 cursor-pointer text-sm "
         >
           {`${options.adult} adult, ${options.children} children, ${options.room} room`}
         </span>
