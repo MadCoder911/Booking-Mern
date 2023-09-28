@@ -8,7 +8,7 @@ import "swiper/css";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-white">
       <Header />
       <div className="homeContainer mt-[50px] bg-white flex flex-col items-center gap-[30px]">
         <Featured />
