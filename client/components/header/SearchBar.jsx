@@ -25,14 +25,14 @@ const SearchBar = () => {
     children: 0,
     room: 1,
   });
-  const handleOption = (target, operation) => {
-    const value = options[target];
+  const handleOption = (property, operation) => {
+    const value = options[property];
     if (value === 0 && operation === "d") {
       return;
     }
     let newVal = operation === "i" ? value + 1 : value - 1;
 
-    setOptions({ ...options, [target]: newVal });
+    setOptions({ ...options, [property]: newVal });
     console.log(options);
   };
   // border-[#febb02]
