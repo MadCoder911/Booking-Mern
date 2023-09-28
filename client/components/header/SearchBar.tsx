@@ -1,7 +1,7 @@
 "use client";
 import { FaBed, FaCalendar } from "react-icons/fa";
 import { BsPerson } from "react-icons/bs";
-import { DateRange } from "react-date-range";
+import { DateRange } from "react-date-range-ts";
 import { useState } from "react";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css"; // main style file
