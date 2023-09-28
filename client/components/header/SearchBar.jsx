@@ -1,7 +1,7 @@
 "use client";
 import { FaBed, FaCalendar } from "react-icons/fa";
 import { BsPerson } from "react-icons/bs";
-import { DateRange } from "react-date-range-ts";
+import { DateRange } from "react-date-range";
 import { useState } from "react";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css"; // main style file
@@ -21,7 +21,7 @@ const SearchBar = () => {
     children: 0,
     room: 1,
   });
-  const handleOption = (target: string, operation: string) => {
+  const handleOption = (target, operation) => {
     const value = options[target];
     if (value === 0 && operation === "d") {
       return;
