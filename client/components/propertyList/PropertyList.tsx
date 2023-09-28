@@ -75,7 +75,9 @@ const PropertyList = () => {
               alt="x"
             />
             <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0">Hotels</p>
+              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
+                Hotels
+              </p>
               <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
                 123 ss
               </p>
@@ -93,7 +95,9 @@ const PropertyList = () => {
               alt="x"
             />
             <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0">Hotels</p>
+              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
+                Hotels
+              </p>
               <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
                 123 ss
               </p>
@@ -111,7 +115,9 @@ const PropertyList = () => {
               alt="x"
             />
             <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0">Hotels</p>
+              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
+                Hotels
+              </p>
               <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
                 123 ss
               </p>
@@ -129,7 +135,9 @@ const PropertyList = () => {
               alt="x"
             />
             <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0">Hotels</p>
+              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
+                Hotels
+              </p>
               <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
                 123 ss
               </p>
@@ -147,7 +155,9 @@ const PropertyList = () => {
               alt="x"
             />
             <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0">Hotels</p>
+              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
+                Hotels
+              </p>
               <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
                 123 ss
               </p>
@@ -165,7 +175,9 @@ const PropertyList = () => {
               alt="x"
             />
             <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0">Hotels</p>
+              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
+                Hotels
+              </p>
               <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
                 123 ss
               </p>
@@ -183,7 +195,9 @@ const PropertyList = () => {
               alt="x"
             />
             <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0">Hotels</p>
+              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
+                Hotels
+              </p>
               <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
                 123 ss
               </p>
