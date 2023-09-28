@@ -8,7 +8,7 @@ import "swiper/css";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Header />
       <div className="homeContainer mt-[50px] flex flex-col items-center gap-[30px]">
         <Featured />
@@ -18,6 +18,6 @@ export default function Home() {
 
         <PropertyList />
       </div>
-    </>
+    </div>
   );
 }

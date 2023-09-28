@@ -46,7 +46,7 @@ const Featured = () => {
     }
   };
   return (
-    <div className="container flex justify-between gap-[20px] z-1">
+    <div className="container flex justify-between gap-[20px]">
       <Swiper
         className=""
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
