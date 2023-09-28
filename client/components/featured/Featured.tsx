@@ -21,7 +21,6 @@ const Featured = () => {
     width: 0,
     height: 0,
   });
-  console.log(windowSize);
   function handleResize() {
     setWindowSize({
       width: window.innerWidth,
