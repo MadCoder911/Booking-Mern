@@ -39,11 +39,11 @@ const Datee = ({ openDate, setOpenDate, openOptions, setOpenOptions }) => {
 
       <DateRange
         editableDateInputs={true}
-        onChange={(item: any) => setDate([item.selection])}
+        onChange={(item) => setDate([item.selection])}
         moveRangeOnFirstSelection={false}
         ranges={date}
-        className={`absolute top-[55px] ease-in-out   ${
-          !openDate ? "left-[1000px]" : " left-[-35px]"
+        className={`absolute lg:top-[55px] top-[109px] lg:z-0 z-999999 ease-in-out   ${
+          !openDate ? "left-[1000px]" : " left-[0px] lg:left-[-35px]"
         } transition-all ease-in-out  `}
       />
     </div>
