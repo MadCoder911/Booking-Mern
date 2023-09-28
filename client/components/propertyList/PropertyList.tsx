@@ -56,7 +56,7 @@ const PropertyList = () => {
         className=""
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         autoplay={{
-          delay: 2000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         spaceBetween={50}

@@ -39,7 +39,7 @@ const SearchBar = () => {
   // border-[3px] border-solid bg-white
 
   return (
-    <div className="py-[20px] container w-[100%] h-[30px] flex lg:flex-row flex-col items-center justify-around px-[2px]  rounded-md absolute bottom-[-140px] lg:bottom-[-25px] bg-[#febb02]  lg:h-[60px] h-[209px] ">
+    <div className="py-[20px] container w-[100%]  flex lg:flex-row flex-col items-center justify-around px-[2px]  rounded-md absolute bottom-[-140px] lg:bottom-[-25px] bg-[#febb02]  lg:h-[60px] h-[209px] ">
       <Input />
       <Datee
         openDate={openDate}
