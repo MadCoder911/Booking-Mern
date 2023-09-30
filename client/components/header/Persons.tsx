@@ -1,5 +1,6 @@
+//Imports
 import { BsPerson } from "react-icons/bs";
-import { useState } from "react";
+//Types
 type Props = {
   setOpenDate: (args: boolean) => {};
   openOptions: boolean;
@@ -7,6 +8,7 @@ type Props = {
   options: { adult: number; children: number; room: number };
   handleOption: (adult: string, arg: string) => {};
 };
+//
 const Persons = ({
   setOpenDate,
   openOptions,
@@ -15,7 +17,7 @@ const Persons = ({
   handleOption,
 }: Props) => {
   return (
-    <div className="headerSearchiTEM flex items-center gap-[10px] relative bg-white h-[50px] p-[20px] rounded-md lg:rounded-lg lg:w-auto w-[99%] m-[2px] lg:m-0">
+    <div className="headerSearchiTEM flex items-center gap-[10px] relative bg-white h-[50px] p-[20px] rounded-md lg:rounded-md lg:w-auto w-[99%] m-[2px] lg:m-0">
       <BsPerson className="text-gray-300 text-[20px]" />
       <span
         onClick={() => {

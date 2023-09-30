@@ -1,14 +1,9 @@
 "use client";
-import { FaBed, FaCalendar } from "react-icons/fa";
-import { BsPerson } from "react-icons/bs";
 import { useState } from "react";
-import { format } from "date-fns";
-import { DateRange } from "react-date-range";
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
 import Input from "./Input";
 import Datee from "./Datee";
 import Persons from "./Persons";
+
 const SearchBar = () => {
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);

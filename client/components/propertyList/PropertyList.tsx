@@ -51,7 +51,7 @@ const PropertyList = () => {
   return (
     //
     //
-    <div className="plIST container flex justify-between gap-[20px]  mb-[50px]">
+    <div className="plIST container flex justify-between gap-[20px]  ">
       <Swiper
         className=""
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -71,7 +71,7 @@ const PropertyList = () => {
               width={400}
               height={400}
               src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover"
+              className="img w-[100%] h-[150px] object-cover mb-1"
               alt="x"
             />
             <div className="PLISTtitles ">
@@ -91,7 +91,7 @@ const PropertyList = () => {
               width={400}
               height={400}
               src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover"
+              className="img w-[100%] h-[150px] object-cover mb-1"
               alt="x"
             />
             <div className="PLISTtitles ">
@@ -111,7 +111,7 @@ const PropertyList = () => {
               width={400}
               height={400}
               src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover"
+              className="img w-[100%] h-[150px] object-cover mb-1"
               alt="x"
             />
             <div className="PLISTtitles ">
@@ -131,7 +131,7 @@ const PropertyList = () => {
               width={400}
               height={400}
               src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover"
+              className="img w-[100%] h-[150px] object-cover mb-1"
               alt="x"
             />
             <div className="PLISTtitles ">
@@ -151,7 +151,7 @@ const PropertyList = () => {
               width={400}
               height={400}
               src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover"
+              className="img w-[100%] h-[150px] object-cover mb-1"
               alt="x"
             />
             <div className="PLISTtitles ">
@@ -171,7 +171,7 @@ const PropertyList = () => {
               width={400}
               height={400}
               src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover"
+              className="img w-[100%] h-[150px] object-cover mb-1"
               alt="x"
             />
             <div className="PLISTtitles ">
@@ -191,7 +191,7 @@ const PropertyList = () => {
               width={400}
               height={400}
               src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover"
+              className="img w-[100%] h-[150px] object-cover mb-1"
               alt="x"
             />
             <div className="PLISTtitles ">
