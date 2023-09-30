@@ -69,9 +69,7 @@ export const Homes = () => {
             Aparthotel Stare Miasto
           </h1>
           <p className="font-light text-[17px] my-1 text-black">Madrid</p>
-          <p className="my-3 font-semibold" text-black>
-            Starting from $120
-          </p>
+          <p className="my-3 font-semibold text-black">Starting from $120</p>
           <div className="rating flex items-center">
             <p className="bg-[#003580] text-white p-[3px] text-[13px] font-bold mr-2">
               8.9
@@ -92,9 +90,7 @@ export const Homes = () => {
             Aparthotel Stare Miasto
           </h1>
           <p className="font-light text-[17px] my-1 text-black">Madrid</p>
-          <p className="my-3 font-semibold" text-black>
-            Starting from $120
-          </p>
+          <p className="my-3 font-semibold text-black">Starting from $120</p>
           <div className="rating flex items-center">
             <p className="bg-[#003580] text-white p-[3px] text-[13px] font-bold mr-2">
               8.9
@@ -115,9 +111,7 @@ export const Homes = () => {
             Aparthotel Stare Miasto
           </h1>
           <p className="font-light text-[17px] my-1 text-black">Madrid</p>
-          <p className="my-3 font-semibold" text-black>
-            Starting from $120
-          </p>
+          <p className="my-3 font-semibold text-black">Starting from $120</p>
           <div className="rating flex items-center">
             <p className="bg-[#003580] text-white p-[3px] text-[13px] font-bold mr-2">
               8.9
@@ -138,9 +132,7 @@ export const Homes = () => {
             Aparthotel Stare Miasto
           </h1>
           <p className="font-light text-[17px] my-1 text-black">Madrid</p>
-          <p className="my-3 font-semibold" text-black>
-            Starting from $120
-          </p>
+          <p className="my-3 font-semibold text-black">Starting from $120</p>
           <div className="rating flex items-center">
             <p className="bg-[#003580] text-white p-[3px] text-[13px] font-bold mr-2">
               8.9
