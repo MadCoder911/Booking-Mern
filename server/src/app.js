@@ -1,11 +1,15 @@
 const express = require("express");
-const dotenv = require("dotenv");
+const authRouter = require("./routes/auth/auth.router");
+const usersRouter = require("./routes/users/users.router");
+const hotelsRouter = require("./routes/hotels/hotels.router");
+
+const roomsRouter = require("./routes/rooms/rooms.router");
 const app = express();
-const { mongoConnect } = require("./services/mongo");
-const startServer = async () => {
-  await mongoConnect();
-  app.listen(8000, () => {
-    console.log("Server started at port 8000");
-  });
-};
-startServer();
+
+app.use(express.json());
+app.use(authRouter);
+app.use(usersRouter);
+app.use(hotelsRouter);
+app.use(roomsRouter);
+
+module.exports = app;
