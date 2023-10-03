@@ -1,31 +1,11 @@
 import { FaBed, FaPlane, FaCar, FaTaxi } from "react-icons/fa";
 import SearchBar from "./SearchBar";
+import TopHeader from "./TopHeader";
 const Header = () => {
   return (
     <div className="bg-[#003580]   relative text-white flex justify-center z-10 mb-[200px] lg:mb-0">
       <div className=" container w-[100%] mt-[20px] mb-[100px] ">
-        <div className="flex gap-[40px] mb-[50px] w-[100%] overflow-x-scroll overflow-y-hidden sm:overflow-hidden">
-          <div className="cursor-pointer flex items-center gap-[10px] hover:scale-[110%] transition-all border-[1px]  p-[10px] rounded-[20px] text-sm sm:text-md">
-            <FaBed />
-            <span className="font-light ">Stays</span>
-          </div>
-          <div className="cursor-pointer flex items-center gap-[10px] hover:scale-[110%] transition-all text-sm sm:text-md ">
-            <FaPlane />
-            <span className="font-light ">Flights</span>
-          </div>
-          <div className="cursor-pointer flex items-center gap-[10px] whitespace-nowrap hover:scale-[110%] transition-all  text-sm sm:text-md  ">
-            <FaCar />
-            <span className="font-light">Car Rentals</span>
-          </div>
-          <div className="cursor-pointer flex items-center gap-[10px] hover:scale-[110%] transition-all text-sm sm:text-md ">
-            <FaBed />
-            <span className="font-light ">Attractions</span>
-          </div>
-          <div className="cursor-pointer flex items-center gap-[10px] whitespace-nowrap hover:scale-[110%] transition-all text-sm sm:text-md">
-            <FaTaxi />
-            <span className="font-light ">Airport Taxi</span>
-          </div>
-        </div>
+        <TopHeader />
         <h1 className="headerTitle my-[24px] font-size-[100px] font-bold text-5xl">
           Find your next stay
         </h1>

@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/header/SearchBar.tsx",
-    "components/header/Datee.jsx"
+    "components/header/Datee.jsx",
+    "components/searchBox/SearchBox.jsx"
   ],
   "exclude": ["node_modules"]
 }
