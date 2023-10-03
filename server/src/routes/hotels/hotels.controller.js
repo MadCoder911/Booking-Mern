@@ -1,4 +1,6 @@
+const { off } = require("../../app");
 const Hotel = require("../../models/hotels");
+const createError = require("../../utils/erros");
 //
 //
 async function createHotel(req, res, next) {
@@ -46,13 +48,20 @@ async function getHotel(req, res) {
 }
 //
 //
-async function getAllHotels(req, res) {
+async function getAllHotels(req, res, next) {
+  const failed = true;
+  if (failed) {
+    next(createError(401, "You are not authenticated"));
+    return;
+  }
   try {
     const hotels = await Hotel.find({});
     if (!hotels || hotels.length < 1) {
       res.status(400).json({ message: "No hotels found" });
     }
     res.status(200).json(hotels);
-  } catch (error) {}
+  } catch (error) {
+    next(err);
+  }
 }
 module.exports = { createHotel, putHotel, deleteHotel, getHotel, getAllHotels };
