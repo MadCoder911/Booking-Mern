@@ -1,5 +1,7 @@
 const User = require("../../models/User");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 const createError = require("../../utils/erros");
 //
 //
@@ -23,19 +25,39 @@ const register = async (req, res, next) => {
 //
 //
 //Login to existing acc
+const KEY = process.env.JWT;
 const login = async (req, res, next) => {
+  console.log(KEY);
   try {
+    //Check user
     const user = await User.findOne({ username: req.body.username });
     if (!user) return next(createError(404, "User not found"));
+
+    //Check password
     const isPasswordCorrect = await bcrypt.compare(
       req.body.password,
       user.password
     );
     if (!isPasswordCorrect) return next(createError(400, "Wrong password"));
+    //Sign JWT
+    const token = jwt.sign(
+      {
+        id: user._id,
+        isAdmin: user.isAdmin,
+      },
+      process.env.JWT
+    );
+    //Respond to client
     const { password, isAdmin, ...otherDetails } = user._doc;
-    res.status(200).json({ ...otherDetails });
+    //Set cookie
+    res
+      .cookie("access_token", token, {
+        httpOnly: true,
+      })
+      .json({ ...otherDetails });
   } catch (err) {
     next(err);
   }
 };
+
 module.exports = { register, login };

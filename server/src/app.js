@@ -1,11 +1,11 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const authRouter = require("./routes/auth/auth.router");
 const usersRouter = require("./routes/users/users.router");
 const hotelsRouter = require("./routes/hotels/hotels.router");
-
 const roomsRouter = require("./routes/rooms/rooms.router");
 const app = express();
-
+app.use(cookieParser());
 app.use(express.json());
 app.use(authRouter);
 app.use(usersRouter);
@@ -18,6 +18,7 @@ app.use((err, req, res, next) => {
     success: false,
     status: errorStatus,
     message: errorMessage,
+    stack: err.stack,
   });
 });
 module.exports = app;
