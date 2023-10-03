@@ -1,7 +1,9 @@
+import Box from "./Box";
+
 const SearchBox = () => {
   return (
-    <div className="w-[100%] container mt-3 flex justify-between">
-      <div className=" bg-yellow-400 rounded-md max-w-[25%] flex flex-row justify-center p-3">
+    <div className="w-[100%] container mt-3 flex relative justify-between">
+      <div className=" bg-yellow-400  rounded-md max-w-[25%]  h-fit top-[20px] flex flex-row justify-center p-3 sticky">
         <form action="">
           <p className="mb-4 font-bold text-[25px] text-gray-700">Search</p>
           <div className="row mb-3">
@@ -74,7 +76,7 @@ const SearchBox = () => {
           </button>
         </form>
       </div>
-      <p className="">t</p>
+      <Box />
     </div>
   );
 };
