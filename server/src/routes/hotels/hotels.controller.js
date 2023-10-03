@@ -1,4 +1,3 @@
-const { off } = require("../../app");
 const Hotel = require("../../models/hotels");
 const createError = require("../../utils/erros");
 //
@@ -9,13 +8,13 @@ async function createHotel(req, res, next) {
   try {
     const savedHotel = await newHotel.save();
     res.status(200).json(savedHotel);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 }
 //
 //
-async function putHotel(req, res) {
+async function putHotel(req, res, next) {
   try {
     const updatedHotel = await Hotel.findByIdAndUpdate(
       req.params.id,
@@ -25,26 +24,32 @@ async function putHotel(req, res) {
       { new: true }
     );
     res.status(200).json(updatedHotel);
-  } catch (error) {}
+  } catch (error) {
+    next(error);
+  }
 }
 //
 //
-async function deleteHotel(req, res) {
+async function deleteHotel(req, res, next) {
   try {
     await Hotel.findByIdAndDelete(req.params.id);
     res.status(200).json({ message: "Hotel deleted" });
-  } catch (error) {}
+  } catch (error) {
+    next(error);
+  }
 }
 //
 //
-async function getHotel(req, res) {
+async function getHotel(req, res, next) {
   try {
     const hotel = await Hotel.findById(req.params.id);
     if (!hotel) {
       res.status(400).json({ message: "not found" });
     }
     res.status(200).json(hotel);
-  } catch (error) {}
+  } catch (error) {
+    next(error);
+  }
 }
 //
 //
