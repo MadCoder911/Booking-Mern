@@ -7,6 +7,7 @@ const {
   deleteHotel,
   getHotel,
   getAllHotels,
+  countByCity,
 } = require("./hotels.controller");
 const {
   verifyToken,
@@ -15,6 +16,9 @@ const {
 } = require("../../utils/verifyToken");
 //Get all hotels
 hotelsRouter.get("/hotels", getAllHotels);
+//Get number of hotels in cities
+hotelsRouter.get("/hotels/countByCity", countByCity);
+// hotelsRouter.get("/hotels/countByType", getAllHotels);
 //Get Hotel
 hotelsRouter.get("/hotels/:id", getHotel);
 //Create Hotel

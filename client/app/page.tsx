@@ -1,27 +1,30 @@
-"use client";
 import Email from "@/components/email/Email";
-import Featured from "@/components/featured/Featured";
-import Footer from "@/components/footer/Footer";
+
+import FeaturedSection from "@/components/featured/FeaturedSection";
+
 import Header from "@/components/header/Header";
-import { Homes } from "@/components/homes/Homes";
-import PropertyList from "@/components/propertyList/PropertyList";
+
+import PropertiesSection from "@/components/propertyList/PropertiesSection";
+
 import "swiper/css";
 
 //
-export default function Home() {
+async function getData() {
+  const res = await fetch("http://localhost:8000/hotels", {
+    next: { revalidate: 10 },
+  });
+  return res;
+}
+export default async function Home() {
+  const res = await getData();
+  const data = await res.json();
+  console.log(data);
   return (
     <div className="overflow-hidden bg-white">
       <Header />
       <div className="homeContainer mt-[50px]  bg-white flex flex-col items-center gap-[30px]">
-        <Featured />
-        <h1 className="hometitle container text-[20px] font-bold">
-          Browse property by type
-        </h1>
-        <PropertyList />
-        <h1 className="hometitle container font-bold text-[20px]">
-          Homes guests love
-        </h1>
-        <Homes />
+        <FeaturedSection />
+        <PropertiesSection />
         <Email />
       </div>
     </div>

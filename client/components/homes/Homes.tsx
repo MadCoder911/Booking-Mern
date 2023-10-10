@@ -54,8 +54,8 @@ export const Homes = () => {
         }}
         spaceBetween={50}
         slidesPerView={sliderValue()}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => }
+        // onSwiper={(swiper) => }
       >
         <SwiperSlide>
           <Image

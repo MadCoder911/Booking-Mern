@@ -54,11 +54,6 @@ async function getHotel(req, res, next) {
 //
 //
 async function getAllHotels(req, res, next) {
-  const failed = true;
-  if (failed) {
-    next(createError(401, "You are not authenticated"));
-    return;
-  }
   try {
     const hotels = await Hotel.find({});
     if (!hotels || hotels.length < 1) {
@@ -69,4 +64,28 @@ async function getAllHotels(req, res, next) {
     next(err);
   }
 }
-module.exports = { createHotel, putHotel, deleteHotel, getHotel, getAllHotels };
+//
+//
+async function countByCity(req, res, next) {
+  const cities = req.query.cities.split(",");
+
+  try {
+    const list = await Promise.all(
+      cities.map((city) => {
+        return Hotel.countDocuments({ city: city });
+      })
+    );
+
+    res.status(200).json(list);
+  } catch (error) {
+    next(err);
+  }
+}
+module.exports = {
+  createHotel,
+  putHotel,
+  deleteHotel,
+  getHotel,
+  getAllHotels,
+  countByCity,
+};
