@@ -8,7 +8,6 @@ import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import Input from "./Input";
 const Datee = ({ openDate, setOpenDate, openOptions, setOpenOptions }) => {
-  console.log("DATE", openDate);
   const [date, setDate] = useState([
     {
       startDate: new Date(),

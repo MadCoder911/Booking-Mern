@@ -4,7 +4,15 @@ const authRouter = require("./routes/auth/auth.router");
 const usersRouter = require("./routes/users/users.router");
 const hotelsRouter = require("./routes/hotels/hotels.router");
 const roomsRouter = require("./routes/rooms/rooms.router");
+const cors = require("cors");
+//
+//
 const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:3002",
+  })
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use(authRouter);

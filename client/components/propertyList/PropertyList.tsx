@@ -17,10 +17,25 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
+type DataObj = { count: number; type: string };
+type DataType = {
+  data?: DataObj[];
+  loading?: boolean;
+  error?: string | boolean;
+  reFetchData?: () => {};
+};
 const PropertyList = () => {
-  const { data, loading, error, reFetchData } = useFetch(
-    `${process.env.API_URL}/hotels/countByCity?cities=berlin,cairo,aswan`
+  const images = [
+    "https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o=",
+    "https://r-xx.bstatic.com/xdata/images/xphoto/263x210/45450084.jpeg?k=f8c2954e867a1dd4b479909c49528531dcfb676d8fbc0d60f51d7b51bb32d1d9&o=",
+    "https://q-xx.bstatic.com/xdata/images/hotel/263x210/100235855.jpeg?k=5b6e6cff16cfd290e953768d63ee15f633b56348238a705c45759aa3a81ba82b&o=",
+    "https://r-xx.bstatic.com/xdata/images/xphoto/263x210/45450082.jpeg?k=beb101b827a729065964523184f4db6cac42900c2415d71d516999af40beb7aa&o=",
+    "https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o=",
+  ];
+  const { data, loading, error, reFetchData }: DataType = useFetch(
+    `${process.env.API_URL}/hotels/countByType`
   );
+  console.log(data);
   //
   //
   const [windowSize, setWindowSize] = useState({
@@ -56,159 +71,48 @@ const PropertyList = () => {
     //
     //
     <div className="plIST container flex justify-between gap-[20px]  ">
-      <Swiper
-        className=""
-        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        spaceBetween={50}
-        slidesPerView={sliderValue()}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperSlide>
-          {" "}
-          <div className="pLISTitem flex-1  rounded-md overflow-hidden cursor-pointer">
-            <Image
-              width={400}
-              height={400}
-              src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover mb-1"
-              alt="x"
-            />
-            <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
-                Hotels
-              </p>
-              <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
-                123 ss
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="pLISTitem flex-1  rounded-md overflow-hidden cursor-pointer">
-            <Image
-              width={400}
-              height={400}
-              src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover mb-1"
-              alt="x"
-            />
-            <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
-                Hotels
-              </p>
-              <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
-                123 ss
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="pLISTitem flex-1  rounded-md overflow-hidden cursor-pointer">
-            <Image
-              width={400}
-              height={400}
-              src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover mb-1"
-              alt="x"
-            />
-            <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
-                Hotels
-              </p>
-              <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
-                123 ss
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="pLISTitem flex-1  rounded-md overflow-hidden cursor-pointer">
-            <Image
-              width={400}
-              height={400}
-              src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover mb-1"
-              alt="x"
-            />
-            <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
-                Hotels
-              </p>
-              <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
-                123 ss
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="pLISTitem flex-1  rounded-md overflow-hidden cursor-pointer">
-            <Image
-              width={400}
-              height={400}
-              src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover mb-1"
-              alt="x"
-            />
-            <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
-                Hotels
-              </p>
-              <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
-                123 ss
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="pLISTitem flex-1  rounded-md overflow-hidden cursor-pointer">
-            <Image
-              width={400}
-              height={400}
-              src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover mb-1"
-              alt="x"
-            />
-            <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
-                Hotels
-              </p>
-              <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
-                123 ss
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="pLISTitem flex-1  rounded-md overflow-hidden cursor-pointer">
-            <Image
-              width={400}
-              height={400}
-              src="https://cf.bstatic.com/xdata/images/city/600x600/688591.jpg?k=9a550fedccb750cfa3f2e8eaf507287d4007f21def68e6566cc00b200946e876&o="
-              className="img w-[100%] h-[150px] object-cover mb-1"
-              alt="x"
-            />
-            <div className="PLISTtitles ">
-              <p className="font-bold text-[18px] mb-0 pb-0 text-black">
-                Hotels
-              </p>
-              <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
-                123 ss
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+      {loading ? (
+        <p>Loading please wait...</p>
+      ) : (
+        <Swiper
+          className=""
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          spaceBetween={50}
+          slidesPerView={sliderValue()}
+          // onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
+        >
+          {data &&
+            images.map((img, i) => {
+              return (
+                <SwiperSlide>
+                  <div className="pLISTitem flex-1  rounded-md overflow-hidden cursor-pointer">
+                    <Image
+                      width={400}
+                      height={400}
+                      src={img}
+                      className="img w-[100%] h-[150px] object-cover mb-1"
+                      alt="x"
+                    />
+                    <div className="PLISTtitles ">
+                      <p className="font-bold text-[18px] mb-0 pb-0 text-black">
+                        Hotels
+                      </p>
+                      <p className="text-[16px] font-300 text-gray-500 p-0 m-0">
+                        {data[i]?.count}{" "}
+                        <span className="capitalize">{data[i]?.type}</span>
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
+      )}
     </div>
     //
     //

@@ -16,6 +16,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch";
+type DataObj = { count: number; type: string } | number;
+type DataType = {
+  data?: number[];
+  loading?: boolean;
+  error?: string | boolean;
+  reFetchData?: () => {};
+};
 const Featured = () => {
   const [windowSize, setWindowSize] = useState({
     width: 0,
@@ -44,6 +52,10 @@ const Featured = () => {
       return 1;
     }
   };
+  const { data, loading, error, reFetchData }: DataType = useFetch(
+    `${process.env.API_URL}/hotels/countByCity?cities=berlin,cairo,aswan`
+  );
+
   return (
     <div className="container flex justify-between gap-[20px]">
       <Swiper
@@ -71,8 +83,8 @@ const Featured = () => {
               height={200}
             />
             <div className="featuredTitles absolute bottom-[24px] left-4 font-bold">
-              <h1>Dublin</h1>
-              <h2>123 Properties</h2>
+              <h1>Berlin</h1>
+              <h2>{data !== undefined ? data[0] : "123"} Properties</h2>
             </div>
           </div>
         </SwiperSlide>
@@ -89,8 +101,8 @@ const Featured = () => {
               height={200}
             />
             <div className="featuredTitles absolute bottom-[24px] left-4 font-bold">
-              <h1>Dublin</h1>
-              <h2>123 Properties</h2>
+              <h1>Cairo</h1>
+              <h2>{data !== undefined ? data[1] : "123"} Properties</h2>
             </div>
           </div>
         </SwiperSlide>
@@ -107,62 +119,8 @@ const Featured = () => {
               height={200}
             />
             <div className="featuredTitles absolute bottom-[24px] left-4 font-bold">
-              <h1>Dublin</h1>
-              <h2>123 Properties</h2>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="featuredItem relative text-white rounded-lg overflow-hidden h-[250px]">
-            <Image
-              className="w-[100%] object-cover "
-              src={
-                "https://cf.bstatic.com/xdata/images/city/600x600/644630.jpg?k=700ac1d32a3bab480b14db2cba3050abe5b5bce062911dc4f5b3fdc15d81f007&o="
-              }
-              alt="KSA"
-              width={200}
-              height={200}
-            />
-            <div className="featuredTitles absolute bottom-[24px] left-4 font-bold">
-              <h1>Dublin</h1>
-              <h2>123 Properties</h2>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="featuredItem relative text-white rounded-lg overflow-hidden h-[250px]">
-            <Image
-              className="w-[100%] object-cover "
-              src={
-                "https://cf.bstatic.com/xdata/images/city/600x600/644630.jpg?k=700ac1d32a3bab480b14db2cba3050abe5b5bce062911dc4f5b3fdc15d81f007&o="
-              }
-              alt="KSA"
-              width={200}
-              height={200}
-            />
-            <div className="featuredTitles absolute bottom-[24px] left-4 font-bold">
-              <h1>Dublin</h1>
-              <h2>123 Properties</h2>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="featuredItem relative text-white rounded-lg overflow-hidden h-[250px]">
-            <Image
-              className="w-[100%] object-cover "
-              src={
-                "https://cf.bstatic.com/xdata/images/city/600x600/644630.jpg?k=700ac1d32a3bab480b14db2cba3050abe5b5bce062911dc4f5b3fdc15d81f007&o="
-              }
-              alt="KSA"
-              width={200}
-              height={200}
-            />
-            <div className="featuredTitles absolute bottom-[24px] left-4 font-bold">
-              <h1>Dublin</h1>
-              <h2>123 Properties</h2>
+              <h1>Aswan</h1>
+              <h2>{data !== undefined ? data[2] : "123"} Properties</h2>
             </div>
           </div>
         </SwiperSlide>
