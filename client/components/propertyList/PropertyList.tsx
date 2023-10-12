@@ -16,7 +16,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch";
 const PropertyList = () => {
+  const { data, loading, error, reFetchData } = useFetch(
+    `${process.env.API_URL}/hotels/countByCity?cities=berlin,cairo,aswan`
+  );
   //
   //
   const [windowSize, setWindowSize] = useState({
