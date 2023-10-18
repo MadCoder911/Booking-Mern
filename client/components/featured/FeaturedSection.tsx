@@ -1,10 +1,10 @@
 "use client";
 import Featured from "./Featured";
 
-const FeaturedSection = () => {
+const FeaturedSection = (content: { content: number[] }) => {
   return (
     <>
-      <Featured />
+      <Featured content={content.content} />
       <h1 className="hometitle container text-[20px] font-bold">
         Browse property by type
       </h1>

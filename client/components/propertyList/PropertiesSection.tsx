@@ -2,10 +2,12 @@
 import { Homes } from "../homes/Homes";
 import PropertyList from "./PropertyList";
 
-const PropertiesSection = () => {
+const PropertiesSection = (content: {
+  content: [{ type: string; count: number }];
+}) => {
   return (
     <>
-      <PropertyList />
+      <PropertyList content={content.content} />
       <h1 className="hometitle container font-bold text-[20px]">
         Homes guests love
       </h1>

@@ -17,10 +17,8 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { useEffect, useState } from "react";
 
-import { fetchFeatured } from "@/utils";
-
-const Featured = () => {
-  const [data, setData] = useState<[number]>();
+const Featured = (content: { content: number[] }) => {
+  const [data, setData] = useState<number[]>(content.content);
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0,
@@ -33,11 +31,11 @@ const Featured = () => {
   }
   useEffect(() => {
     //
-    fetch(`${process.env.API_URL}/hotels/countByCity?cities=berlin,cairo,aswan`)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      });
+    // fetch(`${process.env.API_URL}/hotels/countByCity?cities=berlin,cairo,aswan`)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setData(data);
+    //   });
     window.addEventListener("resize", handleResize);
     handleResize();
 
@@ -99,7 +97,7 @@ const Featured = () => {
             />
             <div className="featuredTitles absolute bottom-[24px] left-4 font-bold">
               <h1>Berlin</h1>
-              <h2>{data !== undefined ? data[0] : "123"} Properties</h2>
+              <h2>{data !== undefined ? data[1] : "123"} Properties</h2>
             </div>
           </div>
         </SwiperSlide>
@@ -117,7 +115,7 @@ const Featured = () => {
             />
             <div className="featuredTitles absolute bottom-[24px] left-4 font-bold">
               <h1>Berlin</h1>
-              <h2>{data !== undefined ? data[0] : "123"} Properties</h2>
+              <h2>{data !== undefined ? data[2] : "123"} Properties</h2>
             </div>
           </div>
         </SwiperSlide>
