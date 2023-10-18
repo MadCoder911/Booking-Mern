@@ -14,6 +14,7 @@ async function createHotel(req, res, next) {
 }
 //
 //
+//
 async function putHotel(req, res, next) {
   try {
     const updatedHotel = await Hotel.findByIdAndUpdate(

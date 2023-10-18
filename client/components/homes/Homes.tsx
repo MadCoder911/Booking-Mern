@@ -16,11 +16,8 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
+
 export const Homes = () => {
-  const { data, loading, error, reFetchData } = useFetch(
-    `${process.env.API_URL}/hotels/?featured=true&limit=4`
-  );
-  console.log(data, "data");
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0,
@@ -62,37 +59,82 @@ export const Homes = () => {
         // onSlideChange={() => }
         // onSwiper={(swiper) => }
       >
-        {data &&
-          data.map((item, i) => {
-            return (
-              <SwiperSlide>
-                <Image
-                  width={400}
-                  height={400}
-                  src={item.photos[0]}
-                  className="img w-[100%]  object-cover mb-3"
-                  alt="x"
-                />
-                <h1 className="font-bold text-[16px] text-black">
-                  {item?.name}
-                </h1>
-                <p className="font-light text-[17px] my-1 text-black">
-                  {item.city}
-                </p>
-                <p className="my-3 font-semibold text-black">
-                  Starting from $120
-                </p>
-                {item?.rating && (
-                  <div className="rating flex items-center">
-                    <p className="bg-[#003580] text-white p-[3px] text-[13px] font-bold mr-2">
-                      {item.rating}
-                    </p>{" "}
-                    <p className="text-[15px] text-black">Excellent</p>
-                  </div>
-                )}
-              </SwiperSlide>
-            );
-          })}
+        <SwiperSlide>
+          <Image
+            width={400}
+            height={400}
+            src="https://cf.bstatic.com/xdata/images/city/600x600/644630.jpg?k=700ac1d32a3bab480b14db2cba3050abe5b5bce062911dc4f5b3fdc15d81f007&o="
+            className="img w-[100%]  object-cover mb-3"
+            alt="x"
+          />
+          <h1 className="font-bold text-[16px] text-black">Inn hotel</h1>
+          <p className="font-light text-[17px] my-1 text-black">Cairo</p>
+          <p className="my-3 font-semibold text-black">Starting from $120</p>
+
+          <div className="rating flex items-center">
+            <p className="bg-[#003580] text-white p-[3px] text-[13px] font-bold mr-2">
+              2
+            </p>{" "}
+            <p className="text-[15px] text-black">Excellent</p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            width={400}
+            height={400}
+            src="https://cf.bstatic.com/xdata/images/city/600x600/644630.jpg?k=700ac1d32a3bab480b14db2cba3050abe5b5bce062911dc4f5b3fdc15d81f007&o="
+            className="img w-[100%]  object-cover mb-3"
+            alt="x"
+          />
+          <h1 className="font-bold text-[16px] text-black">Inn hotel</h1>
+          <p className="font-light text-[17px] my-1 text-black">Cairo</p>
+          <p className="my-3 font-semibold text-black">Starting from $120</p>
+
+          <div className="rating flex items-center">
+            <p className="bg-[#003580] text-white p-[3px] text-[13px] font-bold mr-2">
+              2
+            </p>{" "}
+            <p className="text-[15px] text-black">Excellent</p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            width={400}
+            height={400}
+            src="https://cf.bstatic.com/xdata/images/city/600x600/644630.jpg?k=700ac1d32a3bab480b14db2cba3050abe5b5bce062911dc4f5b3fdc15d81f007&o="
+            className="img w-[100%]  object-cover mb-3"
+            alt="x"
+          />
+          <h1 className="font-bold text-[16px] text-black">Inn hotel</h1>
+          <p className="font-light text-[17px] my-1 text-black">Cairo</p>
+          <p className="my-3 font-semibold text-black">Starting from $120</p>
+
+          <div className="rating flex items-center">
+            <p className="bg-[#003580] text-white p-[3px] text-[13px] font-bold mr-2">
+              2
+            </p>{" "}
+            <p className="text-[15px] text-black">Excellent</p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            width={400}
+            height={400}
+            src="https://cf.bstatic.com/xdata/images/city/600x600/644630.jpg?k=700ac1d32a3bab480b14db2cba3050abe5b5bce062911dc4f5b3fdc15d81f007&o="
+            className="img w-[100%]  object-cover mb-3"
+            alt="x"
+          />
+          <h1 className="font-bold text-[16px] text-black">Inn hotel</h1>
+          <p className="font-light text-[17px] my-1 text-black">Cairo</p>
+          <p className="my-3 font-semibold text-black">Starting from $120</p>
+
+          <div className="rating flex items-center">
+            <p className="bg-[#003580] text-white p-[3px] text-[13px] font-bold mr-2">
+              2
+            </p>{" "}
+            <p className="text-[15px] text-black">Excellent</p>
+          </div>
+        </SwiperSlide>
       </Swiper>
 
       {/* <div className="item">

@@ -9,6 +9,7 @@ const useFetch = (url: string) => {
           _id: number;
           name: string;
           type: string;
+          photos: [string];
           city: string;
           address: string;
         }
