@@ -1,8 +1,19 @@
+"use client";
 import Box from "./Box";
-
+import { useState } from "react";
+import Datee2 from "./Datee2";
 const SearchBox = () => {
+  const [openDate, setOpenDate] = useState(false);
+  const [openOptions, setOpenOptions] = useState(false);
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
   return (
-    <div className="w-[100%] container mt-3 flex relative justify-between">
+    <div className="w-[100%] container mt-3 flex relative justify-between overflow-hidden">
       <div className=" bg-yellow-400  rounded-md max-w-[25%]  h-fit top-[20px] flex flex-row justify-center p-3 sticky">
         <form action="">
           <p className="mb-4 font-bold text-[25px] text-gray-700">Search</p>
@@ -18,7 +29,15 @@ const SearchBox = () => {
           {/*  */}
           <div className="row mb-3">
             <p className="text-[14px]">Check-in Date</p>
-            <div className="x">DATE HERE</div>
+            <div className="x">
+              {" "}
+              <Datee2
+                openDate={openDate}
+                setOpenDate={setOpenDate}
+                openOptions={openOptions}
+                setOpenOptions={setOpenOptions}
+              />
+            </div>
           </div>
           <p className="text-[14px]">Options</p>
           <div className="row flex text-[16px] my-3  justify-between">
