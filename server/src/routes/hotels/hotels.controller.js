@@ -7,7 +7,10 @@ async function createHotel(req, res, next) {
 
   try {
     const savedHotel = await newHotel.save();
-    res.status(200).json(savedHotel);
+    res
+      .status(200)
+      .setHeader("Content-Type", "application/json")
+      .json(savedHotel);
   } catch (error) {
     next(error);
   }
@@ -24,7 +27,10 @@ async function putHotel(req, res, next) {
       },
       { new: true }
     );
-    res.status(200).json(updatedHotel);
+    res
+      .status(200)
+      .setHeader("Content-Type", "application/json")
+      .json(updatedHotel);
   } catch (error) {
     next(error);
   }
@@ -34,7 +40,10 @@ async function putHotel(req, res, next) {
 async function deleteHotel(req, res, next) {
   try {
     await Hotel.findByIdAndDelete(req.params.id);
-    res.status(200).json({ message: "Hotel deleted" });
+    res
+      .status(200)
+      .setHeader("Content-Type", "application/json")
+      .json({ message: "Hotel deleted" });
   } catch (error) {
     next(error);
   }
@@ -47,7 +56,7 @@ async function getHotel(req, res, next) {
     if (!hotel) {
       res.status(400).json({ message: "not found" });
     }
-    res.status(200).json(hotel);
+    res.status(200).setHeader("Content-Type", "application/json").json(hotel);
   } catch (error) {
     next(error);
   }
@@ -65,6 +74,7 @@ async function getAllHotels(req, res, next) {
     if (!hotels || hotels.length < 1) {
       res.status(400).json({ message: "No hotels found" });
     }
+
     res.status(200).json(hotels);
   } catch (error) {
     next(error);
@@ -82,7 +92,10 @@ async function countByCity(req, res, next) {
       })
     );
 
-    res.status(200).json(list);
+    return res
+      .status(200)
+      .setHeader("Content-Type", "application/json")
+      .json(list);
   } catch (error) {
     next(err);
   }
@@ -95,13 +108,16 @@ async function countByType(req, res, next) {
     const villaCount = await Hotel.countDocuments({ type: "villa" });
     const cabinCount = await Hotel.countDocuments({ type: "cabin" });
 
-    res.status(200).json([
-      { type: "hotel", count: hotelCount },
-      { type: "apartments", count: apartmentCount },
-      { type: "resorts", count: resortCount },
-      { type: "villas", count: villaCount },
-      { type: "cabins", count: cabinCount },
-    ]);
+    res
+      .setHeader("Content-Type", "application/json")
+      .status(200)
+      .json([
+        { type: "hotel", count: hotelCount },
+        { type: "apartments", count: apartmentCount },
+        { type: "resorts", count: resortCount },
+        { type: "villas", count: villaCount },
+        { type: "cabins", count: cabinCount },
+      ]);
   } catch (err) {
     next(err);
   }

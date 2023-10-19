@@ -16,7 +16,9 @@ async function getData() {
       next: { revalidate: 10 },
     }
   )
-    .then((res) => res.json())
+    .then((res) => {
+      return res.json();
+    })
     .then((data) => {
       return data;
     });
@@ -26,7 +28,9 @@ async function getData() {
       next: { revalidate: 10 },
     }
   )
-    .then((res) => res.json())
+    .then((res) => {
+      return res.json();
+    })
     .then((data) => {
       return data;
     });
