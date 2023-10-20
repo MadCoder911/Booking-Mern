@@ -3,7 +3,7 @@ import { useState } from "react";
 import Input from "./Input";
 import Datee from "./Datee";
 import Persons from "./Persons";
-
+import { UseSelector, useSelector } from "react-redux";
 const SearchBar = () => {
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
@@ -20,6 +20,7 @@ const SearchBar = () => {
     children: 0,
     room: 1,
   });
+
   const handleOption = (property, operation) => {
     const value = options[property];
     if (value === 0 && operation === "d") {
