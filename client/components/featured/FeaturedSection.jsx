@@ -1,7 +1,7 @@
 "use client";
 import Featured from "./Featured";
 
-const FeaturedSection = (content: { content: number[] }) => {
+const FeaturedSection = (content) => {
   return (
     <>
       <Featured content={content.content} />

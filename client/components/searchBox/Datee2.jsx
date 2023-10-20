@@ -16,20 +16,20 @@ const Datee = ({ openDate, setOpenDate, openOptions, setOpenOptions }) => {
     },
   ]);
   return (
-    <div
-      className="relative flex  items-center  cursor-pointer  text-[15px]  bg-white py-[13px] px-[6px]   "
-      onClick={() => {
-        if (openDate === true) {
-          setOpenDate(false);
-          setOpenOptions(false);
-        } else {
-          setOpenDate(true);
-          setOpenOptions(false);
-        }
-      }}
-    >
+    <div className="relative flex  items-center  cursor-pointer  text-[15px]  bg-white py-[13px] px-[6px]   ">
       <FaCalendar className="text-gray-300" />
-      <span className="headersearchText text-gray-300 cursor-pointer text-sm">
+      <span
+        className="headersearchText text-gray-300 cursor-pointer text-sm"
+        onClick={() => {
+          if (openDate === true) {
+            setOpenDate(false);
+            setOpenOptions(false);
+          } else {
+            setOpenDate(true);
+            setOpenOptions(false);
+          }
+        }}
+      >
         {`${format(date[0].startDate, "MM/dd/yyyy")} to  ${format(
           date[0].endDate,
           "MM/dd/yyyy"

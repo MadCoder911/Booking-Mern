@@ -2,9 +2,7 @@
 import { Homes } from "../homes/Homes";
 import PropertyList from "./PropertyList";
 
-const PropertiesSection = (content: {
-  content: [{ type: string; count: number }];
-}) => {
+const PropertiesSection = (content) => {
   return (
     <>
       <PropertyList content={content.content} />

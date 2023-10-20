@@ -17,8 +17,8 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { useEffect, useState } from "react";
 
-const Featured = (content: { content: number[] }) => {
-  const [data, setData] = useState<number[]>(content.content);
+const Featured = (content) => {
+  const [data, setData] = useState(content.content);
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0,

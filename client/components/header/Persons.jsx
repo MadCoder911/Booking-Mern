@@ -1,13 +1,7 @@
 //Imports
 import { BsPerson } from "react-icons/bs";
 //Types
-type Props = {
-  setOpenDate: (args: boolean) => {};
-  openOptions: boolean;
-  setOpenOptions: (arg: boolean) => {};
-  options: { adult: number; children: number; room: number };
-  handleOption: (adult: string, arg: string) => {};
-};
+
 //
 const Persons = ({
   setOpenDate,
@@ -15,7 +9,7 @@ const Persons = ({
   setOpenOptions,
   options,
   handleOption,
-}: Props) => {
+}) => {
   return (
     <div className="headerSearchiTEM flex items-center gap-[10px] relative bg-white h-[50px] p-[20px] rounded-md lg:rounded-md lg:w-auto w-[99%] m-[2px] lg:m-0">
       <BsPerson className="text-gray-300 text-[20px]" />

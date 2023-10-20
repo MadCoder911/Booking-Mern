@@ -17,14 +17,10 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { useEffect, useState } from "react";
 
-const PropertyList = (content: {
-  content: [{ type: string; count: number }];
-}) => {
+const PropertyList = (content) => {
   console.log(content, "Content");
-  const [data, setData] = useState<[{ type: string; count: number }]>(
-    content.content
-  );
-  const [loading, setLoading] = useState<boolean>(false);
+  const [data, setData] = useState(content.content);
+  const [loading, setLoading] = useState(false);
   const images = [
     "https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o=",
     "https://r-xx.bstatic.com/xdata/images/xphoto/263x210/45450084.jpeg?k=f8c2954e867a1dd4b479909c49528531dcfb676d8fbc0d60f51d7b51bb32d1d9&o=",

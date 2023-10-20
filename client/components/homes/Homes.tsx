@@ -15,7 +15,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { useEffect, useState } from "react";
-import useFetch from "../hooks/useFetch";
+import React from "react";
 
 export const Homes = () => {
   const [windowSize, setWindowSize] = useState({
