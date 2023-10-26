@@ -3,7 +3,7 @@ import Box from "./Box";
 import { useState } from "react";
 import Datee2 from "./Datee2";
 import { store } from "../../store";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 const SearchBox = () => {
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
@@ -14,9 +14,10 @@ const SearchBox = () => {
       key: "selection",
     },
   ]);
+
   return (
     <Provider store={store}>
-      <div className="w-[100%] container mt-3 flex relative justify-between overflow-hidden">
+      <div className="w-[100%] min-h-[100vh] container mt-3 flex relative justify-between overflow-hidden">
         <div className=" bg-yellow-400  rounded-md max-w-[25%]  h-fit top-[20px] flex flex-row justify-center p-3 sticky">
           <form action="">
             <p className="mb-4 font-bold text-[25px] text-gray-700">Search</p>

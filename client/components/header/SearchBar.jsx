@@ -1,9 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Input from "./Input";
+import Link from "next/link";
 import Datee from "./Datee";
 import Persons from "./Persons";
-import { UseSelector, useSelector } from "react-redux";
+import { store } from "../../store";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import { handleChange, handlePersons } from "../../features/search/searchSlice";
 const SearchBar = () => {
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
@@ -20,44 +23,52 @@ const SearchBar = () => {
     children: 0,
     room: 1,
   });
+  const { city, dates, persons } = useSelector((store) => store.search);
 
   const handleOption = (property, operation) => {
-    const value = options[property];
-    if (value === 0 && operation === "d") {
-      return;
-    }
-    let newVal = operation === "i" ? value + 1 : value - 1;
+    let newProp = persons[property];
 
-    setOptions({ ...options, [property]: newVal });
-    console.log(options);
+    if (operation === "i") {
+      dispatch(handlePersons({ target: property, value: newProp + 1 }));
+    } else if (operation === "d" && newProp !== 0) {
+      return dispatch(handlePersons({ target: property, value: newProp - 1 }));
+    }
   };
-  // border-[#febb02]
-  // border-[3px] border-solid bg-white
+
+  const dispatch = useDispatch();
+  const handleInput = (item, value) => {
+    dispatch(handleChange({ item: item, value: value }));
+  };
 
   return (
-    <div className="py-[20px] container w-[100%]  flex lg:flex-row flex-col items-center justify-around px-[2px]  rounded-md absolute bottom-[-140px] lg:bottom-[-25px] bg-[#febb02]  lg:h-[60px] h-[209px] ">
-      <Input />
-      <Datee
-        openDate={openDate}
-        setOpenDate={setOpenDate}
-        openOptions={openOptions}
-        setOpenOptions={setOpenOptions}
-      />
-      <Persons
-        openDate={openDate}
-        setOpenDate={setOpenDate}
-        openOptions={openOptions}
-        setOpenOptions={setOpenOptions}
-        options={options}
-        setOptions={setOptions}
-        handleOption={handleOption}
-      />
-      <div className="headerSearchiTEM flex items-center gap-[10px] h-[50px] m-[3px] lg:m-0  bg-[#0071c2]  rounded-md hover:scale-[101%] transition-all w-[99%]  lg:w-auto cursor-pointer justify-center hover:bg-[#1b90e3]">
-        <button className="   rounded-md  px-[10px] py-[7px] font-light   ">
-          Search
-        </button>
+    <Provider store={store}>
+      <div className="py-[20px] container w-[100%]  flex lg:flex-row flex-col items-center justify-around px-[2px]  rounded-md absolute bottom-[-140px] lg:bottom-[-25px] bg-[#febb02]  lg:h-[60px] h-[209px] ">
+        <Input city={city} handleInput={handleInput} />
+        <Datee
+          openDate={openDate}
+          setOpenDate={setOpenDate}
+          openOptions={openOptions}
+          setOpenOptions={setOpenOptions}
+        />
+        <Persons
+          openDate={openDate}
+          setOpenDate={setOpenDate}
+          openOptions={openOptions}
+          setOpenOptions={setOpenOptions}
+          options={persons}
+          setOptions={setOptions}
+          handleOption={handleOption}
+        />
+        <div className="headerSearchiTEM flex items-center gap-[10px] h-[50px] m-[3px] lg:m-0  bg-[#0071c2]  rounded-md hover:scale-[101%] transition-all w-[99%]  lg:w-auto cursor-pointer justify-center hover:bg-[#1b90e3]">
+          <Link
+            href="/hotels"
+            className="   rounded-md text-white no-underline px-[10px] py-[7px] font-light   "
+          >
+            Search
+          </Link>
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 };
 export default SearchBar;

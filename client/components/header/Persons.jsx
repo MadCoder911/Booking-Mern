@@ -1,5 +1,8 @@
 //Imports
 import { BsPerson } from "react-icons/bs";
+import { store } from "../../store";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import { handleDates } from "../../features/search/searchSlice";
 //Types
 
 //

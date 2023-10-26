@@ -9,7 +9,7 @@ const Hotels = () => {
           <TopHeader />
         </div>
       </main>
-      <div className=" w-100% flex justify-center mb-16 pt-5 bg-white">
+      <div className=" w-100% flex justify-center  pt-5 bg-white">
         <SearchBox />
       </div>
     </>
