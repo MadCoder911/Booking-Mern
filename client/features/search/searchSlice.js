@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   city: "",
   dates: [
     {
-      startDate: "",
-      endDate: "",
+      startDate: new Date(),
+      endDate: new Date(),
     },
   ],
   persons: {
@@ -13,6 +13,8 @@ const initialState = {
     children: 0,
     room: 0,
   },
+  searchResults: "",
+  isLoading: true,
 };
 const searchSlice = createSlice({
   name: "search",
@@ -29,8 +31,22 @@ const searchSlice = createSlice({
     handlePersons: (state, { payload }) => {
       state.persons[payload.target] = payload.value;
     },
+    handleSearchResults: (state, { payload }) => {
+      state.searchResults = payload.data;
+    },
   },
+  // extraReducers: (builder) => {
+  //   builder
+  //     .addCase(handleSearch.pending, (state) => {
+  //       state.isLoading = true;
+  //     })
+  //     .addCase(handleSearch.fulfilled, (state, { payload }) => {
+  //       state.isLoading = false;
+  //       state.searchResults = payload;
+  //     });
+  // },
 });
 
 export default searchSlice.reducer;
-export const { handleChange, handleDates, handlePersons } = searchSlice.actions;
+export const { handleChange, handleDates, handlePersons, handleSearchResults } =
+  searchSlice.actions;

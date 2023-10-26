@@ -10,7 +10,11 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:3002", "https://booking-mern.vercel.app/"],
+    origin: [
+      "http://localhost:3000",
+      "https://booking-mern.vercel.app/",
+      "http://localhost:3001",
+    ],
   })
 );
 app.use(cookieParser());

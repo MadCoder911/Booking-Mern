@@ -14,22 +14,22 @@ const Datee = ({ openDate, setOpenDate, openOptions, setOpenOptions }) => {
   const { dates } = useSelector((store) => store.search);
   const [date, setDate] = useState([
     {
-      startDate: new Date(),
-      endDate: new Date(),
+      startDate: dates[0].startDate,
+      endDate: dates[0].endDate,
       key: "selection",
     },
   ]);
   const dispatch = useDispatch();
   useEffect(() => {
-    const startDate = format(date[0].startDate, "MM/dd/yyyy");
-    const endDate = format(date[0].endDate, "MM/dd/yyyy");
+    const startDate = date[0].startDate;
+    const endDate = date[0].endDate;
     dispatch(handleDates({ startDate: startDate, endDate: endDate }));
   }, [date]);
-  useEffect(() => {
-    const startDate = format(date[0].startDate, "MM/dd/yyyy");
-    const endDate = format(date[0].endDate, "MM/dd/yyyy");
-    dispatch(handleDates({ startDate: startDate, endDate: endDate }));
-  }, []);
+  // useEffect(() => {
+  //   const startDate = format(date[0].startDate, "MM/dd/yyyy");
+  //   const endDate = format(date[0].endDate, "MM/dd/yyyy");
+  //   dispatch(handleDates({ startDate: startDate, endDate: endDate }));
+  // }, []);
   return (
     <Provider store={store}>
       <div className="relative flex  items-center gap-[10px] cursor-pointer  lg:w-auto w-[99%]   bg-white h-[50px] p-[20px] rounded-md lg:rounded-lg m-[2px] lg:m-0">
@@ -46,7 +46,10 @@ const Datee = ({ openDate, setOpenDate, openOptions, setOpenOptions }) => {
             }
           }}
         >
-          {`${dates[0].startDate} to  ${dates[0].endDate}`}
+          {`${format(dates[0].startDate, "MM/dd/yyyy")} to  ${format(
+            dates[0].endDate,
+            "MM/dd/yyyy"
+          )} `}
         </span>
 
         <DateRange
