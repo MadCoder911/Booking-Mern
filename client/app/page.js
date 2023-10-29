@@ -13,7 +13,7 @@ async function getData() {
   const propertyListData = await fetch(
     `${process.env.API_URL}/hotels/countByType`,
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1000 },
     }
   )
     .then((res) => {
@@ -25,7 +25,7 @@ async function getData() {
   const featuredData = await fetch(
     `${process.env.API_URL}/hotels/countByCity?cities=berlin,cairo,aswan`,
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1000 },
     }
   )
     .then((res) => {
