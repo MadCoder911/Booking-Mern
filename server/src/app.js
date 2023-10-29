@@ -13,6 +13,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://booking-mern.vercel.app/",
+      "https://booking-mern.vercel.app",
       "http://localhost:3001",
     ],
   })
