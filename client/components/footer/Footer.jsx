@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="bg-white w-[100%] py-[50px] flex flex-col items-center justify-center text-center">
-      <div className="container flex justify-between text-[13px] text-[#003580] flex-wrap">
+    <footer className="bg-[#003580]  w-[100%] py-[50px] flex flex-col items-center justify-center text-center mt-[50px]">
+      <div className="container flex justify-between text-[13px] text-[white] flex-wrap">
         <ul className="text-left mb-5 md:mb-0">
           <li className="my-1">Countries</li>
           <li className="my-1">Regions</li>
