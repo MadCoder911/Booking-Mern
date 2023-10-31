@@ -46,7 +46,7 @@ const SearchBar = () => {
   const handleSearch = async () => {
     const res = await fetch(`${process.env.API_URL}/hotels?city=${city}`);
     const data = await res.json();
-    return dispatch(handleSearchResults({ data: data }));
+    return dispatch(handleSearchResults({ searchResults: data }));
   };
   return (
     <Provider store={store}>

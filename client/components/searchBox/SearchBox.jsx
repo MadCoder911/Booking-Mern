@@ -19,8 +19,8 @@ const SearchBox = () => {
 
   return (
     <Provider store={store}>
-      <div className="w-[100%] min-h-[100vh] container mt-3 flex relative justify-between overflow-hidden">
-        <div className=" bg-yellow-400  rounded-md max-w-[25%]  h-fit top-[20px] flex flex-row justify-center p-3 sticky">
+      <div className="w-[100%] min-h-[100vh] container mt-3 lg:flex relative justify-center items-center  overflow-hidden ">
+        <div className="  bg-yellow-400  rounded-md lg:max-w-[25%]  h-fit  flex  justify-center p-3 mb-[50px] lg:mb-0">
           <Inputs
             openDate={openDate}
             setOpenDate={setOpenDate}

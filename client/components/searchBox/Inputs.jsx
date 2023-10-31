@@ -1,7 +1,11 @@
 import { store } from "../../store";
 import Datee2 from "./Datee2";
 import { Provider, useDispatch, useSelector } from "react-redux";
-import { handleChange, handlePersons } from "../../features/search/searchSlice";
+import {
+  handleChange,
+  handlePersons,
+  handleSearchResults,
+} from "../../features/search/searchSlice";
 const Inputs = ({
   openDate,
   setOpenDate,
@@ -15,8 +19,14 @@ const Inputs = ({
   const handleInput = (item, value) => {
     dispatch(handleChange({ item: item, value: value }));
   };
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    let raw = await fetch(`${process.env.API_URL}/hotels?city=${city}`);
+    let data = await raw.json();
+    dispatch(handleSearchResults({ searchResults: data }));
+  };
   return (
-    <form action="">
+    <form onSubmit={handleSearch} className="">
       <p className="mb-4 font-bold text-[25px] text-gray-700">Search</p>
       <div className="row mb-3">
         <p className="text-[14px]">Destination</p>

@@ -13,6 +13,8 @@ const initialState = {
     children: 0,
     room: 0,
   },
+  minPrice: 0,
+  maxPrice: 9999,
   searchResults: "",
   isLoading: true,
 };
@@ -32,7 +34,7 @@ const searchSlice = createSlice({
       state.persons[payload.target] = payload.value;
     },
     handleSearchResults: (state, { payload }) => {
-      state.searchResults = payload.data;
+      state.searchResults = payload.searchResults;
     },
   },
   // extraReducers: (builder) => {
