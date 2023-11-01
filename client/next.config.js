@@ -21,6 +21,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "r-xx.bstatic.com",
       },
+      {
+        protocol: "https",
+        hostname: "i.imgur.com",
+      },
     ],
   },
 };

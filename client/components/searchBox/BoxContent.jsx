@@ -1,15 +1,24 @@
 import Image from "next/image";
-const BoxContent = ({ name, distance, rating, description, photos }) => {
+import Link from "next/link";
+const BoxContent = ({
+  name,
+  distance,
+  rating,
+  description,
+  photos,
+  city,
+  id,
+}) => {
   return (
-    <div className="item lg:flex border-[1px] border-solid border-gray-400 text-black rounded-md p-3">
+    <div className="item lg:flex border-[1px] border-solid border-gray-400 text-black rounded-md p-3 flex flex-col lg:flex-row justify-center items-center lg:items-start relative">
       {photos[0] == "" || photos.length < 1 ? (
-        <div className="w-[250px] h-[200px]"> </div>
+        <div className=" w-[400px] h-[300px] block"> </div>
       ) : (
         <Image
           width={400}
           height={400}
           src={photos[0]}
-          className="img max-w-[250px] mr-2 object-cover "
+          className="img lg:max-w-[250px]  lg:max-h-[300px]  max-w-[100%] max-h-[350px] mr-2 object-cover mb-[30px] lg:mb-0 "
           alt="x"
         />
       )}
@@ -39,11 +48,18 @@ const BoxContent = ({ name, distance, rating, description, photos }) => {
             </p>
           </div>
           <div className="bottom">
-            <p className="mt-[130px] text-right text-[30px] font-light">$112</p>
-            <p className="text-gray-400 text-[12px]">Includes taxes and fees</p>
-            <button className=" text-white lg:font-medium bg-[#0071c2] px-2 py-1 rounded-md text-[13px] mt-4">
+            <p className="lg:mt-[130px] mt-[90px] text-right text-[30px] font-light">
+              $112
+            </p>
+            <p className="text-gray-400 text-[12px] text-right ">
+              Includes taxes and fees
+            </p>
+            <Link
+              className=" text-white lg:font-medium bg-[#0071c2] lg:px-3 lg:py-2 px-3 py-2 rounded-md text-[13px] mt-4 no-underline absolute lg:bottom-4 right-2  bottom-2"
+              href={`/hotels/${city}/${id}`}
+            >
               See availability
-            </button>
+            </Link>
           </div>
         </div>
       </div>
