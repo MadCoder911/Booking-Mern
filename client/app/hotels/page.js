@@ -9,6 +9,7 @@ const Hotels = ({ params }) => {
       return params.search;
     }
   };
+  console.log(endParams());
   return (
     <>
       <main className="bg-[#003580]  pt-5 relative text-white flex justify-center z-10 mb-[20px] lg:mb-0">

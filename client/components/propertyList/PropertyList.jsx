@@ -18,7 +18,6 @@ import "swiper/css/autoplay";
 import { useEffect, useState } from "react";
 
 const PropertyList = (content) => {
-  console.log(content, "Content");
   const [data, setData] = useState(content.content);
   const [loading, setLoading] = useState(false);
   const images = [

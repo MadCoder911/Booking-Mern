@@ -2,7 +2,7 @@ import BoxContent from "./BoxContent";
 import { fetchSearch } from "@/utils";
 const Box = async ({ search }) => {
   const searchResults = await fetchSearch(search);
-  console.log(searchResults);
+
   return (
     <div className="w-[100%] flex flex-col gap-5 lg:ml-10">
       {searchResults.map((result, i) => {
