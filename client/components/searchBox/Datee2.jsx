@@ -46,15 +46,18 @@ const Datee = ({ openDate, setOpenDate, openOptions, setOpenOptions }) => {
         )} `}
       </span>
 
-      <DateRange
-        editableDateInputs={true}
-        onChange={(item) => setDate([item.selection])}
-        moveRangeOnFirstSelection={false}
-        ranges={date}
-        className={`absolute lg:top-[55px] top-[109px] lg:z-0 z-999999 ease-in-out   ${
-          !openDate ? "left-[3000px]" : " left-[0px] lg:left-[0px]"
-        } transition-all ease-in-out  `}
-      />
+      <div
+        className={` absolute lg:top-[55px]  top-[50px]  ease-in-out z-50   ${
+          !openDate ? "left-[-1000px]" : " left-[-7px] lg:left-[0px]"
+        } transition-all ease-in-out duration-[650ms]`}
+      >
+        <DateRange
+          editableDateInputs={true}
+          onChange={(item) => setDate([item.selection])}
+          moveRangeOnFirstSelection={false}
+          ranges={date}
+        />
+      </div>
     </div>
   );
 };
