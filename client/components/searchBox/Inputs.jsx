@@ -24,12 +24,13 @@ const Inputs = ({
     e.preventDefault();
   };
   return (
-    <form onSubmit={handleSearch} className="text-black">
+    <div onSubmit={handleSearch} className="text-black">
       <p className="mb-4 font-bold text-[25px] text-gray-700">Search</p>
       <div className="row mb-3">
         <p className="text-[14px]">Destination</p>
         <input
           value={city}
+          id="city"
           onChange={(e) => handleInput("city", e.target.value)}
           type="text"
           placeholder="Destination"
@@ -55,8 +56,8 @@ const Inputs = ({
         <p className="ml-3 text-[14px] ">Min price per night</p>
         <input
           type="number"
-          name=""
-          id=""
+          name="minPrice"
+          id="minPrice"
           className="w-[25%] px-[2px] text-black border-black border-solid border-[1px] placeholder-black"
           placeholder="2"
         />
@@ -65,8 +66,8 @@ const Inputs = ({
         <p className="ml-3 text-[14px] ">Max price per night</p>
         <input
           type="number"
-          name=""
-          id=""
+          name="maxPrice"
+          id="maxPrice"
           className="w-[25%] px-[2px] text-black border-black border-solid border-[1px] placeholder-black"
           placeholder="0"
         />
@@ -79,8 +80,8 @@ const Inputs = ({
             dispatch(handlePersons({ target: "adult", value: e.target.value }))
           }
           type="number"
-          name=""
-          id=""
+          name="number"
+          id="adults"
           className="w-[25%] px-[2px] text-black border-black border-solid border-[1px] placeholder-black"
           placeholder="1"
         />
@@ -95,8 +96,8 @@ const Inputs = ({
             )
           }
           type="number"
-          name=""
-          id=""
+          name="children"
+          id="children"
           className="w-[25%] px-[2px] text-black border-black border-solid border-[1px] placeholder-black"
           placeholder="2"
         />
@@ -109,8 +110,8 @@ const Inputs = ({
             dispatch(handlePersons({ target: "room", value: e.target.value }))
           }
           type="number"
-          name=""
-          id=""
+          name="rooms"
+          id="rooms"
           className="w-[25%] px-[2px] text-black border-black border-solid border-[1px] placeholder-black"
           placeholder="0"
         />
@@ -123,7 +124,7 @@ const Inputs = ({
           Search
         </Link>
       </div>
-    </form>
+    </div>
   );
 };
 export default Inputs;

@@ -1,4 +1,5 @@
 import TopHeader from "@/components/header/TopHeader";
+import Box from "@/components/searchBox/Box";
 import SearchBox from "@/components/searchBox/SearchBox";
 
 const Hotels = ({ params }) => {
@@ -17,8 +18,11 @@ const Hotels = ({ params }) => {
           <TopHeader />
         </div>
       </main>
-      <div className=" w-100% flex justify-center  pt-5 bg-white">
-        <SearchBox search={endParams()} />
+      <div className="w-[100%] flex justify-center mt-[50px]">
+        <div className="lg:flex container">
+          <SearchBox />
+          <Box search={endParams()} />
+        </div>
       </div>
     </>
   );
