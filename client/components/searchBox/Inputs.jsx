@@ -5,6 +5,7 @@ import {
   handleChange,
   handlePersons,
   handleSearchResults,
+  handlePrices,
 } from "../../features/search/searchSlice";
 import Link from "next/link";
 const Inputs = ({
@@ -16,7 +17,10 @@ const Inputs = ({
   setOpenOptions,
 }) => {
   const dispatch = useDispatch();
-  const { city, dates, persons } = useSelector((store) => store.search);
+  const { city, dates, persons, minPrice, maxPrice } = useSelector(
+    (store) => store.search
+  );
+  console.log(minPrice);
   const handleInput = (item, value) => {
     dispatch(handleChange({ item: item, value: value }));
   };
@@ -55,21 +59,37 @@ const Inputs = ({
       <div className="row flex text-[16px] my-3  justify-between">
         <p className="ml-3 text-[14px] ">Min price per night</p>
         <input
+          value={minPrice}
+          onChange={(e) =>
+            dispatch(
+              handlePrices({
+                data: { minPrice: e.target.value, maxPrice: maxPrice },
+              })
+            )
+          }
           type="number"
           name="minPrice"
           id="minPrice"
           className="w-[25%] px-[2px] text-black border-black border-solid border-[1px] placeholder-black"
-          placeholder="2"
+          placeholder="0"
         />
       </div>
       <div className="row flex text-[16px] my-3  justify-between">
         <p className="ml-3 text-[14px] ">Max price per night</p>
         <input
+          value={maxPrice}
+          onChange={(e) =>
+            dispatch(
+              handlePrices({
+                data: { minPrice: minPrice, maxPrice: e.target.value },
+              })
+            )
+          }
           type="number"
           name="maxPrice"
           id="maxPrice"
           className="w-[25%] px-[2px] text-black border-black border-solid border-[1px] placeholder-black"
-          placeholder="0"
+          placeholder="999"
         />
       </div>
       <div className="row flex text-[16px]  my-3 justify-between">
@@ -119,7 +139,7 @@ const Inputs = ({
       <div className="div w-[100%] h-[50px] flex items-center justify-center">
         <Link
           className="w-[100%] bg-[#0071c2] text-white text-center hover:bg-[#174a6f] no-underline py-2"
-          href={`/hotels/${city}`}
+          href={`/hotels/${city}/${minPrice}/${maxPrice}`}
         >
           Search
         </Link>

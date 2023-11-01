@@ -2,20 +2,19 @@ import TopHeader from "@/components/header/TopHeader";
 import Box from "@/components/searchBox/Box";
 import SearchBox from "@/components/searchBox/SearchBox";
 
-const Hotels = ({ params }) => {
-  console.log(params);
+const page = ({ params }) => {
+  const minPrice = +params.slug[0];
+  const maxPrice = +params.slug[1];
   const endParams = () => {
     if (params === "" || !params || Object.keys(params).length === 0) {
       return "all";
     } else {
-      console.log("x");
-      //&min=${minPrice}&max=${maxPrice}
-      return `?city=${params.search.toLowerCase()}`;
+      return `?city=${params.search}&min=${minPrice}&max=${maxPrice}`;
     }
   };
   return (
-    <div className="w-[100%]">
-      <main className="bg-[#003580]  pt-5 relative text-white flex justify-center z-10 mb-[20px] lg:mb-0 ">
+    <>
+      <main className="bg-[#003580]  pt-5 relative text-white flex justify-center z-10 mb-[20px] lg:mb-0">
         <div className="container">
           <TopHeader />
         </div>
@@ -26,7 +25,7 @@ const Hotels = ({ params }) => {
           <Box search={endParams()} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
-export default Hotels;
+export default page;

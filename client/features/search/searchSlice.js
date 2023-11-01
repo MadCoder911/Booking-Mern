@@ -13,8 +13,8 @@ const initialState = {
     children: 0,
     room: 0,
   },
-  minPrice: 0,
-  maxPrice: 9999,
+  minPrice: 1,
+  maxPrice: 999,
   searchResults: "",
   isLoading: true,
 };
@@ -23,7 +23,6 @@ const searchSlice = createSlice({
   initialState,
   reducers: {
     handleChange: (state, { payload }) => {
-      const city = payload.item;
       state.city = payload.value;
     },
     handleDates: (state, { payload }) => {
@@ -35,6 +34,10 @@ const searchSlice = createSlice({
     },
     handleSearchResults: (state, { payload }) => {
       state.searchResults = payload.searchResults;
+    },
+    handlePrices: (state, { payload }) => {
+      state.minPrice = payload.data.minPrice;
+      state.maxPrice = payload.data.maxPrice;
     },
   },
   // extraReducers: (builder) => {
@@ -50,5 +53,10 @@ const searchSlice = createSlice({
 });
 
 export default searchSlice.reducer;
-export const { handleChange, handleDates, handlePersons, handleSearchResults } =
-  searchSlice.actions;
+export const {
+  handleChange,
+  handleDates,
+  handlePersons,
+  handleSearchResults,
+  handlePrices,
+} = searchSlice.actions;

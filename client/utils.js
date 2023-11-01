@@ -12,17 +12,20 @@ export const fetchFeatured = async () => {
 };
 
 export const fetchSearch = async (search) => {
+  console.log(search);
   try {
     if (search === "all") {
       const response = await axios.get(`${process.env.API_URL}/hotels`);
+
       return response.data;
     } else {
       const response = await axios.get(
-        `${process.env.API_URL}/hotels?city=${search}`
+        `${process.env.API_URL}/hotels${search}`
       );
+
       return response.data;
     }
   } catch (error) {
-    return error;
+    return [];
   }
 };

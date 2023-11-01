@@ -7,7 +7,7 @@ const Hotels = ({ params }) => {
     if (params === "" || !params || Object.keys(params).length === 0) {
       return "all";
     } else {
-      return params.search.toLowerCase();
+      return `?city=${params.search.toLowerCase()}`;
     }
   };
 

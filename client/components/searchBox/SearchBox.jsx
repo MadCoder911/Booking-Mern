@@ -19,7 +19,7 @@ const SearchBox = ({ search }) => {
 
   return (
     <Provider store={store}>
-      <div className="  bg-yellow-400  rounded-md lg:max-w-[25%]  h-fit  flex  justify-center p-3 mb-[50px] lg:mb-0">
+      <div className="  bg-yellow-500  rounded-md lg:max-w-[25%]  h-fit  flex  justify-center p-3 mb-[50px] lg:mb-0">
         <Inputs
           openDate={openDate}
           setOpenDate={setOpenDate}
@@ -29,7 +29,6 @@ const SearchBox = ({ search }) => {
           setOpenOptions={setOpenOptions}
         />
       </div>
-      {/* <Box search={search} /> */}
     </Provider>
   );
 };
