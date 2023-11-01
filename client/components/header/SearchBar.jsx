@@ -45,11 +45,12 @@ const SearchBar = () => {
   };
   const checkCity = () => {
     if (!city) {
-      return "";
+      return "/cairo";
     } else if (city) {
       return `/${city.toLowerCase()}`;
     }
   };
+
   return (
     <Provider store={store}>
       <div className="py-[20px] container w-[100%]  flex lg:flex-row flex-col items-center justify-around px-[2px]  rounded-md absolute bottom-[-140px] lg:bottom-[-25px] bg-[#febb02]  lg:h-[60px] h-[222px] ">
@@ -71,6 +72,9 @@ const SearchBar = () => {
         />
         <div className="w-[100%] lg:w-fit">
           <Link
+            onClick={() => {
+              dispatch(handleChange({ value: "cairo" }));
+            }}
             href={`/hotels${checkCity()}`}
             className="text-white no-underline px-[10px]  font-light flex items-center  h-[50px] m-[3px] lg:m-0  bg-[#0071c2]  rounded-md hover:scale-[101%] transition-all w-[99%]  lg:w-auto cursor-pointer justify-center hover:bg-[#1b90e3]"
           >

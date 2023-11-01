@@ -8,8 +8,6 @@ const Hotels = ({ params }) => {
     if (params === "" || !params || Object.keys(params).length === 0) {
       return "all";
     } else {
-      console.log("x");
-      //&min=${minPrice}&max=${maxPrice}
       return `?city=${params.search.toLowerCase()}`;
     }
   };

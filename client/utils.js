@@ -12,7 +12,7 @@ export const fetchFeatured = async () => {
 };
 
 export const fetchSearch = async (search) => {
-  console.log(search);
+  console.log(search, "search");
   try {
     if (search === "all") {
       const response = await axios.get(`${process.env.API_URL}/hotels`);
