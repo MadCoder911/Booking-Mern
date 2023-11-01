@@ -18,7 +18,7 @@ const Hotels = ({ params }) => {
           <TopHeader />
         </div>
       </main>
-      <div className="w-[100%] flex justify-center mt-[50px] bg-white">
+      <div className="w-[100%] flex justify-center pt-[50px] pb-[50px] bg-white">
         <div className="lg:flex container">
           <SearchBox />
           <Box search={endParams()} />
