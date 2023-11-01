@@ -7,7 +7,7 @@ const Hotels = ({ params }) => {
     if (params === "" || !params || Object.keys(params).length === 0) {
       return "all";
     } else {
-      return params.search;
+      return params.search.toLowerCase();
     }
   };
 
@@ -18,7 +18,7 @@ const Hotels = ({ params }) => {
           <TopHeader />
         </div>
       </main>
-      <div className="w-[100%] flex justify-center mt-[50px]">
+      <div className="w-[100%] flex justify-center mt-[50px] bg-white">
         <div className="lg:flex container">
           <SearchBox />
           <Box search={endParams()} />
