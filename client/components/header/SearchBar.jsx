@@ -69,8 +69,7 @@ const SearchBar = () => {
         />
         <div className="headerSearchiTEM flex items-center gap-[10px] h-[50px] m-[3px] lg:m-0  bg-[#0071c2]  rounded-md hover:scale-[101%] transition-all w-[99%]  lg:w-auto cursor-pointer justify-center hover:bg-[#1b90e3]">
           <Link
-            onClick={async () => await handleSearch()}
-            href="/hotels"
+            href={`/hotels/${city}`}
             className="   rounded-md text-white no-underline px-[10px] py-[7px] font-light"
           >
             Search

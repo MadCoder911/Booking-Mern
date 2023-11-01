@@ -6,7 +6,7 @@ import { store } from "../../store";
 
 import { Provider, useDispatch, useSelector } from "react-redux";
 import Inputs from "./Inputs";
-const SearchBox = () => {
+const SearchBox = ({ search }) => {
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
   const [date, setDate] = useState([
@@ -30,7 +30,7 @@ const SearchBox = () => {
             setOpenOptions={setOpenOptions}
           />
         </div>
-        <Box />
+        <Box search={search} />
       </div>
     </Provider>
   );

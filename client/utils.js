@@ -11,3 +11,14 @@ export const fetchFeatured = async () => {
     return error;
   }
 };
+
+export const fetchSearch = async (search) => {
+  try {
+    const response = await axios.get(
+      `${process.env.API_URL}/hotels?city=${search}`
+    );
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};

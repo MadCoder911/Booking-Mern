@@ -26,7 +26,7 @@ const Inputs = ({
     dispatch(handleSearchResults({ searchResults: data }));
   };
   return (
-    <form onSubmit={handleSearch} className="">
+    <form onSubmit={handleSearch} className="text-black">
       <p className="mb-4 font-bold text-[25px] text-gray-700">Search</p>
       <div className="row mb-3">
         <p className="text-[14px]">Destination</p>
