@@ -1,7 +1,7 @@
 import Image from "next/image";
 const BoxContent = ({ name, distance, rating, description, photos }) => {
   return (
-    <div className="item lg:flex border-[1px] border-solid border-gray-400  rounded-md p-3">
+    <div className="item lg:flex border-[1px] border-solid border-gray-400 text-black rounded-md p-3">
       {photos[0] == "" || photos.length < 1 ? (
         <div className="w-[250px] h-[200px]"> </div>
       ) : (
