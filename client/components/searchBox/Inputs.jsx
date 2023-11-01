@@ -6,6 +6,7 @@ import {
   handlePersons,
   handleSearchResults,
 } from "../../features/search/searchSlice";
+import Link from "next/link";
 const Inputs = ({
   openDate,
   setOpenDate,
@@ -19,11 +20,8 @@ const Inputs = ({
   const handleInput = (item, value) => {
     dispatch(handleChange({ item: item, value: value }));
   };
-  const handleSearch = async (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
-    let raw = await fetch(`${process.env.API_URL}/hotels?city=${city}`);
-    let data = await raw.json();
-    dispatch(handleSearchResults({ searchResults: data }));
   };
   return (
     <form onSubmit={handleSearch} className="text-black">
@@ -117,9 +115,14 @@ const Inputs = ({
           placeholder="0"
         />
       </div>
-      <button className="w-[100%] px-6 py-2 bg-[#0071c2] text-white hover:bg-[#174a6f]">
-        Search
-      </button>
+      <div className="div w-[100%] h-[50px] flex items-center justify-center">
+        <Link
+          className="w-[100%] bg-[#0071c2] text-white text-center hover:bg-[#174a6f] no-underline py-2"
+          href={`/hotels/${city}`}
+        >
+          Search
+        </Link>
+      </div>
     </form>
   );
 };

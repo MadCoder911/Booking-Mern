@@ -67,10 +67,10 @@ const SearchBar = () => {
           setOptions={setOptions}
           handleOption={handleOption}
         />
-        <div className="headerSearchiTEM flex items-center gap-[10px] h-[50px] m-[3px] lg:m-0  bg-[#0071c2]  rounded-md hover:scale-[101%] transition-all w-[99%]  lg:w-auto cursor-pointer justify-center hover:bg-[#1b90e3]">
+        <div>
           <Link
             href={`/hotels/${city}`}
-            className="   rounded-md text-white no-underline px-[10px] py-[7px] font-light"
+            className="text-white no-underline px-[10px] py-[7px] font-light flex items-center gap-[10px] h-[50px] m-[3px] lg:m-0  bg-[#0071c2]  rounded-md hover:scale-[101%] transition-all w-[99%]  lg:w-auto cursor-pointer justify-center hover:bg-[#1b90e3]"
           >
             Search
           </Link>

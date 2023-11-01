@@ -14,10 +14,15 @@ export const fetchFeatured = async () => {
 
 export const fetchSearch = async (search) => {
   try {
-    const response = await axios.get(
-      `${process.env.API_URL}/hotels?city=${search}`
-    );
-    return response.data;
+    if (search === "all") {
+      const response = await axios.get(`${process.env.API_URL}/hotels`);
+      return response.data;
+    } else {
+      const response = await axios.get(
+        `${process.env.API_URL}/hotels?city=${search}`
+      );
+      return response.data;
+    }
   } catch (error) {
     return error;
   }
