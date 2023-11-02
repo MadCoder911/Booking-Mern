@@ -10,6 +10,7 @@ import {
   handleChange,
   handlePersons,
   handleSearchResults,
+  handlePrices,
 } from "../../features/search/searchSlice";
 const SearchBar = () => {
   const [openDate, setOpenDate] = useState(false);
@@ -65,6 +66,13 @@ const SearchBar = () => {
         />
         <div className="w-[100%] lg:w-fit">
           <Link
+            onClick={() => {
+              dispatch(
+                handlePrices({
+                  data: { minPrice: 1, maxPrice: 999 },
+                })
+              );
+            }}
             href={`/hotels/${city}`}
             className="text-white no-underline px-[10px]  font-light flex items-center  h-[50px] m-[3px] lg:m-0  bg-[#0071c2]  rounded-md hover:scale-[101%] transition-all w-[99%]  lg:w-auto cursor-pointer justify-center hover:bg-[#1b90e3]"
           >

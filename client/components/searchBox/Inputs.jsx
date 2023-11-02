@@ -143,7 +143,13 @@ const Inputs = ({
       </div>
       <div className="div w-[100%] h-[50px] flex items-center justify-center">
         <Link
-          onClick={async () => {}}
+          onClick={() => {
+            dispatch(
+              handlePrices({
+                data: { minPrice: 1, maxPrice: 999 },
+              })
+            );
+          }}
           className="w-[100%] bg-[#0071c2] text-white text-center hover:bg-[#174a6f] no-underline py-2"
           href={`/hotels/${city}`}
         >
