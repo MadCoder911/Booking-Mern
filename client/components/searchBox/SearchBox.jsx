@@ -1,6 +1,6 @@
 "use client";
 import Box from "./Box";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Datee2 from "./Datee2";
 import { store } from "../../store";
 
@@ -29,6 +29,7 @@ const SearchBox = ({ search }) => {
           setOpenOptions={setOpenOptions}
         />
       </div>
+      <Box params={search} />
     </Provider>
   );
 };

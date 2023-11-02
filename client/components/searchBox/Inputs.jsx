@@ -20,12 +20,17 @@ const Inputs = ({
   const { city, dates, persons, minPrice, maxPrice } = useSelector(
     (store) => store.search
   );
-  console.log(minPrice);
+
   const handleInput = (item, value) => {
     dispatch(handleChange({ item: item, value: value }));
   };
   const handleSearch = (e) => {
     e.preventDefault();
+  };
+  const handleClick = async () => {
+    const response = await fetch(`${process.env.API_URL}/hotels`);
+    const data = await response.json();
+    dispatch(handleSearchResults({ searchResults: data }));
   };
   return (
     <div onSubmit={handleSearch} className="text-black">
@@ -138,8 +143,9 @@ const Inputs = ({
       </div>
       <div className="div w-[100%] h-[50px] flex items-center justify-center">
         <Link
+          onClick={async () => {}}
           className="w-[100%] bg-[#0071c2] text-white text-center hover:bg-[#174a6f] no-underline py-2"
-          href={`/hotels/${city}/${minPrice}/${maxPrice}`}
+          href={`/hotels/${city}`}
         >
           Search
         </Link>
