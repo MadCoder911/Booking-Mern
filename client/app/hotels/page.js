@@ -13,7 +13,7 @@ const Hotels = ({ params }) => {
   };
   return (
     <div className="w-[100%]">
-      <main className="bg-[#003580]  pt-5 relative text-white flex justify-center z-10 mb-[20px] lg:mb-0 ">
+      <main className="bg-[#003580]  pt-5 relative text-white flex justify-center z-10   ">
         <div className="container">
           <TopHeader />
         </div>
