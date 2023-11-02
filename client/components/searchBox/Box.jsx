@@ -25,7 +25,8 @@ const Box = ({ params }) => {
       if (params?.search !== undefined) {
         filteredData = data.filter(
           (hotel) =>
-            hotel.city === params?.search && hotel.cheapestPrice > minPrice
+            hotel.city.toLowerCase() === params?.search.toLowerCase() &&
+            hotel.cheapestPrice > minPrice
         );
       } else {
         filteredData = data.filter((hotel) => hotel.cheapestPrice > minPrice);
@@ -37,7 +38,7 @@ const Box = ({ params }) => {
       );
     };
     if (params?.search !== undefined) {
-      dispatch(handleChange({ value: params?.search }));
+      dispatch(handleChange({ value: params?.search.toLowerCase() }));
     }
     fetchData();
   }, [minPrice, maxPrice]);
