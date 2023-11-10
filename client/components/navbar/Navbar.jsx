@@ -1,4 +1,8 @@
+"use client";
 import Link from "next/link";
+import NavBtns from "./NavBtns";
+import { Provider } from "react-redux";
+import { store } from "../../store";
 const Navbar = () => {
   return (
     <div className="h-[85px] bg-[#003580] flex justify-center ">
@@ -7,14 +11,11 @@ const Navbar = () => {
           {" "}
           <span>Booking</span>
         </Link>
-        <div>
-          <button className="ml-[20px] border-none py-[5px] px-[10px] cursor-pointer text-[#0071c2] bg-white rounded-md hover:bg-[#003580] hover:text-white transition-all">
-            Register
-          </button>
-          <button className="ml-[20px] border-none py-[5px] px-[10px] cursor-pointer text-[#0071c2] bg-white rounded-md hover:bg-[#003580] hover:text-white transition-all">
-            Login
-          </button>
-        </div>
+        <Provider store={store}>
+          <div>
+            <NavBtns />
+          </div>
+        </Provider>
       </div>
     </div>
   );

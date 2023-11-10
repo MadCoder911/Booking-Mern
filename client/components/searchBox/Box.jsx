@@ -11,7 +11,6 @@ import {
   handleSearchResults,
 } from "@/features/search/searchSlice";
 const Box = ({ params }) => {
-  console.log(params?.search);
   const { city, minPrice, maxPrice, searchResults } = useSelector(
     (store) => store.search
   );

@@ -9,10 +9,12 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    //   handleChange: (state, { payload }) => {
-    //     state[payload.name] = payload.value;
-    //   },
+    setUser: (state, { payload }) => {
+      console.log(payload);
+      state.user = payload.user;
+    },
   },
 });
 
 export default userSlice.reducer;
+export const { setUser } = userSlice.actions;

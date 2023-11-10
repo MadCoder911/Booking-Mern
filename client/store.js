@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import searchSlice from "./features/search/searchSlice";
+import userSlice from "./features/user/userSlice";
 export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -20,5 +21,6 @@ export const store = configureStore({
     }),
   reducer: {
     search: searchSlice,
+    user: userSlice,
   },
 });

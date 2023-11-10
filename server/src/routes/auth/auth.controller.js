@@ -27,6 +27,7 @@ const register = async (req, res, next) => {
 //Login to existing acc
 const KEY = process.env.JWT;
 const login = async (req, res, next) => {
+  console.log(req.body);
   try {
     //Check user
     const user = await User.findOne({ username: req.body.username });

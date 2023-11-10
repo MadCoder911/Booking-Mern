@@ -3,7 +3,6 @@ import Box from "@/components/searchBox/Box";
 import SearchBox from "@/components/searchBox/SearchBox";
 
 const Hotels = ({ params }) => {
-  console.log(params);
   const endParams = () => {
     if (params === "" || !params || Object.keys(params).length === 0) {
       return "all";

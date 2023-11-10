@@ -4,7 +4,7 @@ const createError = require("../../utils/erros");
 
 async function createRoom(req, res, next) {
   const hotelId = req.params.id;
-  console.log(hotelId);
+
   const newRoom = new Room(req.body);
 
   try {

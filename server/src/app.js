@@ -16,6 +16,8 @@ app.use(
       "https://booking-mern.vercel.app",
       "http://localhost:3001",
     ],
+
+    credentials: true, //i
   })
 );
 app.use(cookieParser());

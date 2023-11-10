@@ -65,7 +65,7 @@ async function getHotel(req, res, next) {
 //
 async function getAllHotels(req, res, next) {
   const { min, max, limit, ...others } = req.query;
-  console.log(req.query);
+
   try {
     const hotels = await Hotel.find({
       ...others,
