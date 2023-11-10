@@ -26,7 +26,7 @@ const NavBtns = () => {
           href={"/logout"}
           className="ml-[20px] border-none py-[5px] px-[10px] no-underline cursor-pointer text-[#0071c2] bg-white rounded-md hover:bg-[#003580] hover:text-white transition-all"
         >
-          Logout
+          Logout test
         </Link>
       )}
     </div>
